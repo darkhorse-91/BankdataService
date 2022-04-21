@@ -18,7 +18,7 @@ def get_db_connection():
 def bank_model():
 	conn = get_db_connection()
 	cur = conn.cursor()
-	cur.execute('SELECT * FROM banks;')
+	cur.execute('SELECT * FROM bankdata.banks;')
 	banks = cur.fetchall()
 	cur.close()
 	conn.close()
