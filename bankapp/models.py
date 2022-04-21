@@ -2,13 +2,18 @@ import psycopg2
 
 
 def get_db_connection():
-	db_con = psycopg2.connect(host="localhost", 
-	                 port="5432", 
-	                 user="postgres", 
-	                 password="asb266", 
-	                 database="darkhorse", 
-	                 options="-c search_path=bankdata")
-	return db_con
+	# db_con = psycopg2.connect(host="localhost", 
+	#                  port="5432", 
+	#                  user="postgres", 
+	#                  password="asb266", 
+	#                  database="darkhorse", 
+	#                  options="-c search_path=bankdata")
+	# return db_con
+	conn_string = 'postgresql://ufazqe5ru1fnd974uhrv:n1Bq3tI1IUb3nVN7LjTz@bsvjhovusoysfhtsoiec-postgresql.services.clever-cloud.com:5432/bsvjhovusoysfhtsoiec'
+	try:
+		psycopg2.connect(conn_string)
+	except Exception as e:
+		print(e)
 
 def bank_model():
 	conn = get_db_connection()
