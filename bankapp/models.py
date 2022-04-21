@@ -11,7 +11,7 @@ def get_db_connection():
 	# return db_con
 	conn_string = 'postgresql://ufazqe5ru1fnd974uhrv:n1Bq3tI1IUb3nVN7LjTz@bsvjhovusoysfhtsoiec-postgresql.services.clever-cloud.com:5432/bsvjhovusoysfhtsoiec'
 	try:
-		psycopg2.connect(conn_string)
+		return psycopg2.connect(conn_string)
 	except Exception as e:
 		print(e)
 
