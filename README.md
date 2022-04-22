@@ -25,7 +25,7 @@ Data used is available from the excel sheet of RBI(Reserve Bank of India).
 ## API Endpoints
 
 * GET [/api/branches/](http://127.0.0.1:5000/api/branches/?q={search_parameter}) --> Returns response `{'data': [list of lists with matched data]}`
-* GET [/api/v1/metar/info/](http://127.0.0.1:5000/api/branches/autocomplete?q={search_parameter}) --> Returns response `{'data': [list of lists with matched data]}`
+* GET [/api/branches/autocomplete/](http://127.0.0.1:5000/api/branches/autocomplete?q={search_parameter}) --> Returns response `{'data': [list of lists with matched data]}`
 
 
 ## Database 
