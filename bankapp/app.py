@@ -1,5 +1,6 @@
 from flask import Flask, request
 from bankapp.models import bank_model, branches_model, branch_autocomplete_model
+from bankapp.utility import data_format_utility
 
 app = Flask(__name__)
 
@@ -22,9 +23,9 @@ def autocomplete():
 		return {'message': 'Please provide a valid search parameter'}
 
 	try:
-		autocomplete_data = branch_autocomplete_model(param_search, param_limit, param_offset)
+		autocomplete_data = data_format_utility(branch_autocomplete_model(param_search, param_limit, param_offset))
 
-		return {'data': autocomplete_data}
+		return {'branches': autocomplete_data}
 
 	except Exception as e:
 		print(e)
@@ -41,9 +42,9 @@ def branches():
 		return {'message': 'Please provide a valid search parameter'}
 
 	try:
-		branches_data = branches_model(param_search, param_limit, param_offset)
+		branches_data = data_format_utility(branches_model(param_search, param_limit, param_offset))
 
-		return {'data': branches_data}
+		return {'branches': branches_data}
 
 	except Exception as e:
 		return {'Error':'Something has not worked'},500
